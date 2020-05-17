@@ -60,7 +60,10 @@ def print_words(filename):
 
 def print_top(filename):
     """Prints the top count listing for the given file."""
-    # Your code here
+    book_words = create_word_dict(filename)
+    sorted_words = sorted(book_words.items(), key = lambda kv: (kv[1], kv[0]), reverse=True)
+    for index in range(20):
+        print(sorted_words[index][0], " : ", sorted_words[index][1])
     return
 
 
